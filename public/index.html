@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat en Tiempo Real</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <h2>Ingresa al Chat</h2>
+        <input type="text" id="usernameInput" placeholder="Tu nombre de usuario" />
+        <button id="loginButton">Entrar</button>
+    </div>
+
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            Chat en Tiempo Real
+        </div>
+        <div class="chat-messages" id="messagesContainer"></div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Escribe un mensaje..." />
+            <button id="sendButton">Enviar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

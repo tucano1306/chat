@@ -1,0 +1,208 @@
+/* Variables de colores y temas */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --light-text: #95a5a6;
+    --success-color: #2ecc71;
+    --border-radius: 12px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Contenedor de login */
+  .login-container {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  .login-container h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Contenedor principal del chat */
+  .chat-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 800px;
+    height: 80vh;
+    display: none;
+    overflow: hidden;
+    animation: slideUp 0.5s ease-in;
+  }
+  
+  /* Cabecera del chat */
+  .chat-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Contenedor de mensajes */
+  .chat-messages {
+    height: calc(80vh - 140px);
+    overflow-y: auto;
+    padding: 20px;
+    background: var(--secondary-color);
+  }
+  
+  /* Estilos de los mensajes */
+  .message {
+    margin-bottom: 15px;
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 15px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .message.received {
+    background: white;
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .message.sent {
+    background: var(--primary-color);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .system-message {
+    text-align: center;
+    color: var(--light-text);
+    margin: 10px 0;
+    font-style: italic;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Área de entrada de mensajes */
+  .chat-input {
+    padding: 20px;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  /* Estilos de inputs */
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #357abd;
+    transform: translateY(-1px);
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Scrollbar personalizado */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 3px;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .chat-container {
+      height: 100vh;
+      border-radius: 0;
+    }
+    
+    .chat-messages {
+      height: calc(100vh - 140px);
+    }
+    
+    .message {
+      max-width: 90%;
+    }
+  }
